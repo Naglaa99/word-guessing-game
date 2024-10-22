@@ -36,4 +36,4 @@ This is a Word Guessing Game built using HTML, CSS, and JavaScript. The goal of 
 
 
 ## Live Demo 
-[]
+[https://naglaa99.github.io/word-guessing-game/]
