@@ -5,32 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Challenge your friends in this fun Guess the Word game! Decode clues, enhance your vocabulary, and enjoy endless entertainment!" />
+      content="Challenge your friends in this fun Guess the Word game! Decode clues, enhance your vocabulary, and enjoy endless entertainment!"
+    />
 
     <title>Guess The Word Game</title>
     <link
       rel="icon"
       href="./images/guess-the-word-game.ico"
-      type="image/x-icon" />
+      type="image/x-icon"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body
-    class="bg-gray-600 font-[Arial] flex justify-center items-center min-h-screen">
+    class="bg-gray-600 font-[Arial] flex justify-center items-center min-h-screen"
+  >
     <div
-      class="start-page fixed w-full h-full top-0 left-0 z-20 bg-no-repeat bg-cover bg-center bg-[url('images/guess-the-word-small-screen.jpg')] sm:bg-[url('./images/guess-word-select-letters-background.png')]">
+      class="start-page fixed w-full h-full top-0 left-0 z-20 bg-no-repeat bg-cover bg-center bg-[url('images/guess-the-word-small-screen.jpg')] sm:bg-[url('./images/guess-word-select-letters-background.png')]"
+    >
       <div
-        class="start-play absolute top-[80%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[250px] cursor-pointer">
+        class="start-play absolute top-[80%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[250px] cursor-pointer"
+      >
         <img src=" ./images/start-play.png" alt="start play" />
       </div>
     </div>
 
     <div
-      class="lg:w-[1000px] md:w-[850px] w-full mx-2 h-auto bg-black rounded-[8px] z-10">
-
+      class="lg:w-[1000px] md:w-[850px] w-full mx-2 h-auto bg-black rounded-[8px] z-10"
+    >
       <div
-        class="control-info py-4 sm:px-4 px-2 m-4 bg-cyan-900 flex justify-between capitalize text-[1.1rem] sm:text-[1.2rem] font-bold">
+        class="control-info py-4 sm:px-4 px-2 m-4 bg-cyan-900 flex justify-between capitalize text-[1.1rem] sm:text-[1.2rem] font-bold"
+      >
         <span class="player-name text-white"
           >Hello : <span class="font-normal text-amber-400"></span>
         </span>
@@ -40,18 +46,21 @@
       </div>
 
       <div
-        class="sm:flex sm:justify-between sm:items-start items-center lg:m-12 sm:m-6 m-4">
-
+        class="sm:flex sm:justify-between sm:items-start items-center lg:m-12 sm:m-6 m-4"
+      >
         <div class="game-area">
           <div class="inputs"></div>
           <div
-            class="flex justify-center lg:gap-x-10 md:gap-x-6 gap-x-4 items-center md:w-[330px] sm-w-[300px] w-full">
+            class="flex justify-center lg:gap-x-10 md:gap-x-6 gap-x-4 items-center md:w-[330px] sm-w-[300px] w-full"
+          >
             <button
-              class="check bg-cyan-600 flex-1 text-white font-bold my-[20px] py-2 text-[18px] rounded hover:bg-cyan-400 hover:text-black transition-colors duration-300 capitalize">
+              class="check bg-cyan-600 flex-1 text-white font-bold my-[20px] py-2 text-[18px] rounded hover:bg-cyan-400 hover:text-black transition-colors duration-300 capitalize"
+            >
               check word
             </button>
             <button
-              class="hint bg-orange-500 hover:bg-orange-300 my-[20px] hover:text-black transition-colors duration-300 text-white font-bold py-2 px-6 text-[18px] rounded capitalize">
+              class="hint bg-orange-500 hover:bg-orange-300 my-[20px] hover:text-black transition-colors duration-300 text-white font-bold py-2 px-6 text-[18px] rounded capitalize"
+            >
               <span></span> hints
             </button>
           </div>
@@ -63,37 +72,41 @@
           </h2>
 
           <div
-            class="key-color flex items-center my-3 bg-white rounded-[6px] p-3 capitalize shadow-md shadow-slate-500">
+            class="key-color flex items-center my-3 bg-white rounded-[6px] p-3 capitalize shadow-md shadow-slate-500"
+          >
             <div
-              class="key bg-emerald-500 w-[30px] h-[30px] rounded-[50%] mr-2"></div>
+              class="key bg-emerald-500 w-[30px] h-[30px] rounded-[50%] mr-2"
+            ></div>
             <div class="key-text text-[16px]">
               letter is correct and in place
             </div>
           </div>
 
           <div
-            class="key-color flex items-center my-3 bg-white p-3 rounded-[6px] capitalize shadow-md shadow-slate-500">
+            class="key-color flex items-center my-3 bg-white p-3 rounded-[6px] capitalize shadow-md shadow-slate-500"
+          >
             <div
-              class="key bg-amber-500 w-[30px] h-[30px] rounded-[50%] mr-2"></div>
+              class="key bg-amber-500 w-[30px] h-[30px] rounded-[50%] mr-2"
+            ></div>
             <div class="key-text text-[16px]">
               letter is correct but not in place
             </div>
           </div>
 
           <div
-            class="key-color flex items-center my-3 bg-white p-3 rounded-[6px] capitalize shadow-md shadow-slate-500">
+            class="key-color flex items-center my-3 bg-white p-3 rounded-[6px] capitalize shadow-md shadow-slate-500"
+          >
             <div
-              class="key bg-rose-800 w-[30px] h-[30px] rounded-[50%] mr-2"></div>
+              class="key bg-rose-800 w-[30px] h-[30px] rounded-[50%] mr-2"
+            ></div>
             <div class="key-text text-[16px]">letter is wrong</div>
           </div>
         </div>
-
       </div>
     </div>
-    
+
     <!--====javascript===  -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./main.js"></script>
-
   </body>
 </html>
