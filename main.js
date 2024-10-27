@@ -209,7 +209,7 @@ function handleGuesses() {
   if (gameState.successGuess) {
     setTimeout(() => {
       Swal.fire({
-        title: `Congratulations 🎉 <span class="text-sky-700  >${gameState.playerName}</span>!`,
+        title: `Congratulations 🎉 <span class="text-sky-700">${gameState.playerName}</span>!`,
         html: `You guessed the word: <span class="text-green-700 font-bold ">${gameState.wordToGuess}</span>`,
         icon: "success",
         confirmButtonText: "Play Again",
