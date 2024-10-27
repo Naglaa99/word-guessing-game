@@ -55,12 +55,7 @@ function startGame() {
   updateUIWithPlayerInfo();
 
   elements.startPage.remove();
-<<<<<<< HEAD
   generateInputs();
-=======
-
-  generateInput();
->>>>>>> ae8fdf2e683be027f7d62fd6dad069da36d97dc9
 }
 
 // Function to get a valid number of tries from the player
