@@ -37,7 +37,7 @@ function startGame() {
   gameState.numberOfTries = getValidNumbersOfTries();
   updateUIWithPlayerInfo();
   elements.startPage.remove();
-  generateInput();
+  generateInputs();
 }
 
 // Function to get a valid number of tries from the player
@@ -55,12 +55,12 @@ function getValidNumbersOfTries() {
 
 // Function to update UI elements with player's info (name and tries)
 function updateUIWithPlayerInfo() {
-  elements.nameOfPlayer.innerHTML = gameState.playerName || "Unknown";
-  elements.tries.innerHTML = gameState.numberOfTries || "Unknown";
+  elements.nameOfPlayer.innerHTML = gameState.playerName || "Guest";
+  elements.tries.innerHTML = gameState.numberOfTries ;
 }
 
 // Function to generate input fields for the player's guesses
-function generateInput() {
+function generateInputs() {
   for (let i = 1; i <= gameState.numberOfTries; i++) {
 
     let guessContainer = document.createElement("div");
@@ -136,7 +136,6 @@ gameState.wordToGuess =
 gameState.numberOfLetters = gameState.wordToGuess.length;
 
 elements.guessButton.addEventListener("click", handleGuesses);
-
 // Function to handle the player's guesses and check if they are correct
 function handleGuesses() {
   gameState.successGuess = true;
