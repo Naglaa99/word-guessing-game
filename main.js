@@ -19,15 +19,31 @@ let gameState = {
   wordToGuess: "",
   successGuess: true,
   wordList: [
-    "apple", "house", "plant", "snake", "grape", "chair", "table",
-    "light", "train", "bread", "melon", "cloud", "stone", "brush",
-    "brick", "flame", "plate", "drain", "flock", "paper",
+    "apple",
+    "house",
+    "plant",
+    "snake",
+    "grape",
+    "chair",
+    "table",
+    "light",
+    "train",
+    "bread",
+    "melon",
+    "cloud",
+    "stone",
+    "brush",
+    "brick",
+    "flame",
+    "plate",
+    "drain",
+    "flock",
+    "paper",
   ],
   letter: "",
   correctLetter: "",
-  numberOfHints: 2,
+  numberOfHints: 3,
 };
-
 
 elements.startButton.addEventListener("click", startGame);
 
@@ -35,16 +51,25 @@ elements.startButton.addEventListener("click", startGame);
 function startGame() {
   gameState.playerName = prompt("please ,Enter your Name");
   gameState.numberOfTries = getValidNumbersOfTries();
+
   updateUIWithPlayerInfo();
+
   elements.startPage.remove();
+<<<<<<< HEAD
   generateInputs();
+=======
+
+  generateInput();
+>>>>>>> ae8fdf2e683be027f7d62fd6dad069da36d97dc9
 }
 
 // Function to get a valid number of tries from the player
 function getValidNumbersOfTries() {
   let numberOfTries;
+
   do {
     numberOfTries = prompt("How many tries? (Max: 5)");
+
     if (numberOfTries > 5 || numberOfTries <= 0) {
       alert("Please enter a number between 1 and 5.");
     }
@@ -62,7 +87,6 @@ function updateUIWithPlayerInfo() {
 // Function to generate input fields for the player's guesses
 function generateInputs() {
   for (let i = 1; i <= gameState.numberOfTries; i++) {
-
     let guessContainer = document.createElement("div");
     let tryText = document.createElement("span");
 
@@ -92,24 +116,44 @@ function generateInputs() {
       );
 
     guessContainer.appendChild(tryText);
+
     elements.inputsContainer.appendChild(guessContainer);
 
     for (let j = 1; j <= gameState.numberOfLetters; j++) {
       const input = document.createElement("input");
 
       input.classList.add(
-        "md:mx-2", "sm:mx-1", "mx-2", "w-[32px]", "h-[32px]", "lg:w-[50px]",
-        "lg:h-[50px]", "md:w-[40px]", "md:h-[40px]", "sm:w-[35px]", "sm:h-[35px]",
-        "text-center", "md:text-[35px]", "sm:text-[30px]", "text-[24px]",
-        "caret-cyan-500", "border-b-4", "border-solid", "border-b-cyan-600",
-        "focus:outline-gray-400", "uppercase"
+        "md:mx-2",
+        "sm:mx-1",
+        "mx-2",
+        "w-[32px]",
+        "h-[32px]",
+        "lg:w-[50px]",
+        "lg:h-[50px]",
+        "md:w-[40px]",
+        "md:h-[40px]",
+        "sm:w-[35px]",
+        "sm:h-[35px]",
+        "text-center",
+        "md:text-[35px]",
+        "sm:text-[30px]",
+        "text-[24px]",
+        "caret-cyan-500",
+        "border-b-4",
+        "border-solid",
+        "border-b-cyan-600",
+        "focus:outline-gray-400",
+        "uppercase"
       );
 
       input.type = "text";
       input.id = `guess${i}-letter${j}`;
+
       input.setAttribute("maxlength", "1");
+
       input.addEventListener("input", () => {
         const nextInput = input.nextElementSibling;
+
         if (nextInput) nextInput.focus();
       });
 
@@ -141,22 +185,24 @@ function handleGuesses() {
   gameState.successGuess = true;
 
   for (let i = 1; i <= gameState.numberOfLetters; i++) {
-
     const inputField = document.querySelector(
       `#guess${gameState.currentTry}-letter${i}`
     );
 
     gameState.letter = inputField.value.toLowerCase();
+
     gameState.correctLetter = gameState.wordToGuess[i - 1];
 
     // Validate and style the input field based on the player's guess
     if (!gameState.letter) {
       inputField.classList.add("bg-rose-800");
+
       gameState.successGuess = false;
     } else if (gameState.correctLetter == gameState.letter) {
       inputField.classList.add("bg-emerald-500", "text-white");
     } else if (gameState.wordToGuess.includes(gameState.letter)) {
       inputField.classList.add("bg-amber-500", "text-white");
+
       gameState.successGuess = false;
     } else {
       inputField.classList.add("bg-rose-800", "text-white");
@@ -175,7 +221,6 @@ function handleGuesses() {
       }).then(() => location.reload());
     }, 500);
   } else {
-
     // If the guess was incorrect, disable the current try and move to the next one
     document
       .querySelector(`.try-${gameState.currentTry}`)
@@ -191,6 +236,7 @@ function handleGuesses() {
     let nextTryInputs = document.querySelectorAll(
       `.try-${gameState.currentTry} input`
     );
+
     nextTryInputs.forEach((input) => input.removeAttribute("disabled"));
 
     let nextTryElement = document.querySelector(`.try-${gameState.currentTry}`);
@@ -203,7 +249,6 @@ function handleGuesses() {
       );
       nextTryElement.querySelector("input").focus();
     } else {
-      
       // If no tries left, show game over message
       setTimeout(() => {
         Swal.fire({
@@ -236,6 +281,7 @@ function getHint() {
 // Function to fill a random empty input with the correct letter
 function fillRandomEmptyInput() {
   const enabledInputs = document.querySelectorAll("input:not([disabled])");
+
   const emptyEnabledInputs = Array.from(enabledInputs).filter(
     (input) => input.value === ""
   );
@@ -244,6 +290,7 @@ function fillRandomEmptyInput() {
     const randomIndex = Math.floor(Math.random() * emptyEnabledInputs.length);
     const randomInput = emptyEnabledInputs[randomIndex];
     const indexToFill = Array.from(enabledInputs).indexOf(randomInput);
+
     if (indexToFill !== -1) {
       randomInput.value = gameState.wordToGuess[indexToFill].toUpperCase();
     }
@@ -260,7 +307,6 @@ function handleBackSpace(event) {
       inputs[currentIndex - 1].value = "";
       inputs[currentIndex - 1].focus();
     }
-
   }
 }
 
