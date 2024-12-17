@@ -21,9 +21,8 @@ This is a Word Guessing Game built using HTML, CSS, and JavaScript. The goal of 
 
 ## Technologies Used
 - HTML5: For structuring the webpage.
-- CSS3: For styling the game interface.
 - JavaScript (ES6): For game logic and interactivity.
-- Tailwind CSS: For responsive and utility-first styling.
+- Tailwind CSS
 
 ## preview
 
